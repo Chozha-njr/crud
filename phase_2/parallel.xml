@@ -1,0 +1,47 @@
+<suite name="LearningGroups">
+	<test name="smokeTesting">
+		<groups>			
+			<run>				
+				<include name="smoke"></include>	
+			</run>
+		</groups>
+		<classes>
+			<class name="project_1.parallel"></class>	
+		</classes>	
+	</test>	
+	<test name="functionalTesting">
+		<groups>			
+			<run>				
+				<include name="functional"></include>	
+			</run>
+		</groups>
+		<classes>
+			<class name="project_1.parallel"></class>		
+		</classes>	
+	</test>
+		<test name="AllTestingWithExcludeSmokeTestCases">
+		<groups>			
+			<run>				
+				<exclude name="regression"></exclude>	
+			</run>
+		</groups>
+		<classes>
+			<class name="project_1.parallel"></class>		
+		</classes>	
+	</test>
+	<test name="TestCycle1">
+	<classes>
+		<class name="project_1.parallel">
+			<methods>
+				
+				<include name="wikiPage1"></include>
+				<include name="wikiPage2"></include>
+				<include name="ninjaPage1"></include>
+				<include name="ninjaPage2"></include>
+
+			</methods>
+	
+		</class>
+	</classes>
+</test>
+</suite>
