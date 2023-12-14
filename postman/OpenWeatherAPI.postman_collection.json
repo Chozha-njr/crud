@@ -1,0 +1,161 @@
+{
+	"info": {
+		"_postman_id": "90dc596a-5484-4db0-a4f8-870f987070bf",
+		"name": "OpenWeatherAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31715187",
+		"_collection_link": "https://martian-water-196765.postman.co/workspace/Phase-3-postman~e8b4b862-839c-4140-9c64-04062b15fe07/collection/31715187-90dc596a-5484-4db0-a4f8-870f987070bf?action=share&source=collection_link&creator=31715187"
+	},
+	"item": [
+		{
+			"name": "GetCitybynamebyname",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"City\", \"New York\");//use to set location in {{city}}\r",
+							"pm.globals.set(\"url\", \"https://api.openweathermap.org/data/2.5/weather\");//use to set url_link in {{url}} it is global\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}?q={{City}}&appid={{Apikey}}",
+					"host": [
+						"{{url}}"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "{{City}}"
+						},
+						{
+							"key": "appid",
+							"value": "{{Apikey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCitybyId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Base_Url}}?id=1261481&appid={{Apikey}}",
+					"host": [
+						"{{Base_Url}}"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1261481"
+						},
+						{
+							"key": "appid",
+							"value": "{{Apikey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetWeatherLatLon",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{Base_Url}}?lat=44.34&lon=10.99&appid={{Apikey}}",
+					"host": [
+						"{{Base_Url}}"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "44.34"
+						},
+						{
+							"key": "lon",
+							"value": "10.99"
+						},
+						{
+							"key": "appid",
+							"value": "{{Apikey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetbyLang",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Base_Url}}?id=524901&lang=fr&appid={{Apikey}}",
+					"host": [
+						"{{Base_Url}}"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "524901"
+						},
+						{
+							"key": "lang",
+							"value": "fr"
+						},
+						{
+							"key": "appid",
+							"value": "{{Apikey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"value": "",
+			"type": "string"
+		}
+	]
+}
